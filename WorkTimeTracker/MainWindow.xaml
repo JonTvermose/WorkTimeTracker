@@ -8,8 +8,6 @@
         Title="Work Time Tracker" Height="270" Width="300"
         DataContext="{RelativeSource Self}">
     <Grid>
-        <Label Content="Last work day:" HorizontalAlignment="Left" Margin="30,30,0,0" VerticalAlignment="Top"/>
-        <Label Content="{Binding Path=LastWorkDayTime}" HorizontalAlignment="Left" Margin="150,20,0,0" VerticalAlignment="Top" FontSize="24" Foreground="Green" FontWeight="Bold"/>
 
         <Label Content="Today:" HorizontalAlignment="Left" Margin="30,80,0,0" VerticalAlignment="Top"/>
         <Label Content="{Binding Path=TodayTime}" HorizontalAlignment="Left" Margin="150,70,0,0" VerticalAlignment="Top" FontSize="24" Foreground="Green" FontWeight="Bold"/>

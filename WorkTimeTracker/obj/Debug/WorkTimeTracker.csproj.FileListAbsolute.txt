@@ -19,3 +19,4 @@ C:\Users\Jon\source\repos\WorkTimeTracker\WorkTimeTracker\bin\Debug\EntityFramew
 C:\Users\Jon\source\repos\WorkTimeTracker\WorkTimeTracker\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Jon\source\repos\WorkTimeTracker\WorkTimeTracker\obj\Debug\WorkTimeTracker.csproj.CopyComplete
 C:\Users\Jon\source\repos\WorkTimeTracker\WorkTimeTracker\obj\Debug\WorkTimeTracker.Migrations.Initial.resources
+C:\Users\Jon\source\repos\WorkTimeTracker\WorkTimeTracker\obj\Debug\WorkTimeTracker.Migrations.ChangedDayDate.resources

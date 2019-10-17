@@ -7,6 +7,7 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using WorkTimeTracker.Helpers;
 
 namespace WorkTimeTracker
 {
@@ -39,7 +40,7 @@ namespace WorkTimeTracker
             _notifyIcon.ContextMenuStrip =
               new System.Windows.Forms.ContextMenuStrip();
             _notifyIcon.ContextMenuStrip.Items.Add("Work Time Tracker").Click += (s, e) => ShowMainWindow();
-            _notifyIcon.ContextMenuStrip.Items.Add("Exit").Click += (s, e) => ExitApplication();
+            _notifyIcon.ContextMenuStrip.Items.Add("Close").Click += (s, e) => ExitApplication();
         }
 
         private void ExitApplication()
@@ -52,7 +53,25 @@ namespace WorkTimeTracker
 
         public void OnShutdown(object sender, EventArgs e)
         {
-            // TODO register the shutdown time
+            // Register the shutdown time
+            using (var context = new ApplicationDbContext())
+            {
+                var today = context.Days.SingleOrDefault(x => x.DateTicks == DateTime.UtcNow.Date.Ticks);
+                if(today != null)
+                {
+                    today.EndTime = DateTime.UtcNow.TimeOfDay;
+                    context.SaveChanges();
+                } else
+                {
+                    today = new Models.Day
+                    {
+                        DateTicks = DateTime.UtcNow.Date.Ticks,
+                        EndTime = DateTime.UtcNow.TimeOfDay
+                    };
+                    context.Days.Add(today);
+                    context.SaveChanges();
+                }
+            }
         }
 
         private void UpdateData()
@@ -60,8 +79,28 @@ namespace WorkTimeTracker
             using (var context = new ApplicationDbContext())
             {
                 // TODO Fetch data/calculate and update the data shown by mainwindow
-                ((MainWindow)MainWindow).UpdateData();
+                var todayTicks = DateTime.UtcNow.Date.Ticks;
+                var today = context.Days.SingleOrDefault(x => x.DateTicks == todayTicks);
+                if (today == null)
+                {
+                    today = new Models.Day
+                    {
+                        DateTicks = DateTime.UtcNow.Date.Ticks,
+                        StartTime = DateTime.UtcNow.TimeOfDay
+                    };
+                    context.Days.Add(today);
+                    context.SaveChanges();
+                }
+                var dayOfWeek = new DateTime(today.DateTicks).DayOfWeek; // mon = 1
+                var monday = DateTime.UtcNow.Date.AddDays(1 - (int)dayOfWeek);
+                var thisWeekDays = context.Days.Where(x => x.DateTicks >= monday.Ticks && x.DateTicks < today.DateTicks).ToList();
+                TimeSpan weekTime = TimeSpan.FromSeconds(0);
+                foreach(var day in thisWeekDays)
+                {
+                    weekTime += day.WorkTime();
+                }
 
+                ((MainWindow)MainWindow).UpdateData(weekTime, today);
             }
         }
 

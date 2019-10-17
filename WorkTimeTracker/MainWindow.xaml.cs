@@ -14,6 +14,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WorkTimeTracker.Helpers;
+using WorkTimeTracker.Models;
 
 namespace WorkTimeTracker
 {
@@ -23,20 +25,9 @@ namespace WorkTimeTracker
     public partial class MainWindow : Window, INotifyPropertyChanged
     {
 
-        private string _LastWorkDayTime;
         private string _ThisWeekTotalTime;
         private string _TodayTime;
         private string _ThisWeekRemainingTime;
-
-        public string LastWorkDayTime
-        {
-            get => _LastWorkDayTime;
-            set
-            {
-                _LastWorkDayTime = value;
-                OnPropertyChanged();
-            }
-        }
 
         public string ThisWeekTotalTime { 
             get => _ThisWeekTotalTime;
@@ -73,9 +64,12 @@ namespace WorkTimeTracker
             DataContext = this;
         }
 
-        public void UpdateData()
+        public void UpdateData(TimeSpan weekTime, Day today)
         {
-
+            ThisWeekTotalTime = weekTime.ToPrettyTime();
+            var todayWorkTime = new TimeSpan(DateTime.UtcNow.TimeOfDay.Ticks - today.StartTime.Value.Ticks);
+            ThisWeekRemainingTime = new TimeSpan(TimeSpan.FromHours(37).Ticks - weekTime.Ticks - todayWorkTime.Ticks).ToPrettyTime();
+            TodayTime = todayWorkTime.ToPrettyTime();
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

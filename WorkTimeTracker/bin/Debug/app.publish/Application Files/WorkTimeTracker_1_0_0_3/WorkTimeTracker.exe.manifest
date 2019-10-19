@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="WorkTimeTracker.exe" version="1.0.0.3" publicKeyToken="6e43f2477c382508" language="neutral" processorArchitecture="msil" type="win32" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="WorkTimeTracker" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="WorkTimeTracker.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC Manifest Options
+          If you want to change the Windows User Account Control level replace the
+          requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         If you want to utilize File and Registry Virtualization for backward
+         compatibility then delete the requestedExecutionLevel node.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="EntityFramework.dll" size="5225168">
+      <assemblyIdentity name="EntityFramework" version="6.0.0.0" publicKeyToken="B77A5C561934E089" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>nCD7KthqdgsMauvZMByQCYkdAq4UcgqTkmwLU1uK0Js=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="EntityFramework.SqlServer.dll" size="622288">
+      <assemblyIdentity name="EntityFramework.SqlServer" version="6.0.0.0" publicKeyToken="B77A5C561934E089" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>4OEmw7inupUB0D+Z1Upcu9F0vOy2FwCYq0zBIZ8n+TM=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="WorkTimeTracker.exe" size="258008">
+      <assemblyIdentity name="WorkTimeTracker" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>nqLrJnFvyc9BKxLpnpgZmz7cT+oZQdjS+6jjaNn3D1s=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="WorkTimeTracker.exe.config" size="607">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>YUehV5PE2r6wPWJJI73tHeBSwJFUJMJ4cZXH8IcQijc=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=DESKTOP-E352OMK\Jon" issuerKeyHash="ca885289332d8ed4e0e5618a1fcc4cc04275a8ae" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>Hf9axpHsW6oNZ33vIVCyFTqiIILn42EXfTmoYSuzuOU=</DigestValue></Reference></SignedInfo><SignatureValue>b4cGcRqO78B0OI8SkyzGKwtMm42PbD1kNQ2tw/gPxafXMmGPcvujQTO+JJrq94aFTq0p1E5Nx9tmcEkAm9JFPsiAZIs+PYg2U6Rnqjy5eBSgtMx77ysE8PALsD99FDWD62IFCoV63WXvPh28ft/ZNG/R72TeG9ArRO+RI2Gn9ZA=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>wlT6DDFREjeU3lyrToGxyl34+nnGvvqekGa+i8bucrhRCrGj2Pghbwe4WDbM2DNjNQJku5GFDephLnIBda+KWGkY1MrFOp78pnPRFRktBAxpfzR/Fcz27U7Qw7pdneCMO3uJmMEvITss9yHnqryefNd1NupwSQwKS1cI+EvC2Qk=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="e5b8b32b61a8397d1761e3e78220a23a15b25021ef7d670daa5bec91c65aff1d" Description="" Url=""><as:assemblyIdentity name="WorkTimeTracker.exe" version="1.0.0.3" publicKeyToken="6e43f2477c382508" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=DESKTOP-E352OMK\Jon</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>eFOHBaVJ7AhNTsYoU+Z0O8NNiXP/W5xA+3Xa0WpXUoM=</DigestValue></Reference></SignedInfo><SignatureValue>KBNFTOtpm8BGlMZvRVccx20IsbjxwQnfgEwgDYe8fseqbzbrijNzN54KaWWsD5Xlq5VAayWEsx9FRC2QayvL47zQlLk70VPZP/8GFExX9E7RParEY9IaHF2sryp3caHmk0TUtN1ONVBwsUQjqM2wbJ+cfedvZ3f3KV7EaDUWS4Y=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>wlT6DDFREjeU3lyrToGxyl34+nnGvvqekGa+i8bucrhRCrGj2Pghbwe4WDbM2DNjNQJku5GFDephLnIBda+KWGkY1MrFOp78pnPRFRktBAxpfzR/Fcz27U7Qw7pdneCMO3uJmMEvITss9yHnqryefNd1NupwSQwKS1cI+EvC2Qk=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB5TCCAU6gAwIBAgIQEddjGRfo7blDQ7TPFc6D8DANBgkqhkiG9w0BAQsFADAxMS8wLQYDVQQDHiYARABFAFMASwBUAE8AUAAtAEUAMwA1ADIATwBNAEsAXABKAG8AbjAeFw0xOTEwMTcwOTM0MjdaFw0yMDEwMTYxNTM0MjdaMDExLzAtBgNVBAMeJgBEAEUAUwBLAFQATwBQAC0ARQAzADUAMgBPAE0ASwBcAEoAbwBuMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDCVPoMMVESN5TeXKtOgbHKXfj6eca++p6QZr6Lxu5yuFEKsaPY+CFvB7hYNszYM2M1AmS7kYUN6mEucgF1r4pYaRjUysU6nvymc9EVGS0EDGl/NH8VzPbtTtDDul2d4Iw7e4mYwS8hOyz3IeeqvJ5813U26nBJDApLVwj4S8LZCQIDAQABMA0GCSqGSIb3DQEBCwUAA4GBAGjrrggPm1CimUhx3q7Qjt37ESwacibriT4lbcWM53fRX2Du+HlleI7FCPlv3WN3MPmIKih3/cRErxvL3MLgKQumITNW5susa+TmlSesxDkWKG4s+70L+HZA/iynPnuWhHzFv4iyRxoj3hfD42vpXUxo9imsnl9XLXIxZTD7PEtU</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

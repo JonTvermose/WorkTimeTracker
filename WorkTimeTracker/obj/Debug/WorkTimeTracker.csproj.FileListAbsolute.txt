@@ -20,3 +20,8 @@ C:\Users\Jon\source\repos\WorkTimeTracker\WorkTimeTracker\bin\Debug\EntityFramew
 C:\Users\Jon\source\repos\WorkTimeTracker\WorkTimeTracker\obj\Debug\WorkTimeTracker.csproj.CopyComplete
 C:\Users\Jon\source\repos\WorkTimeTracker\WorkTimeTracker\obj\Debug\WorkTimeTracker.Migrations.Initial.resources
 C:\Users\Jon\source\repos\WorkTimeTracker\WorkTimeTracker\obj\Debug\WorkTimeTracker.Migrations.ChangedDayDate.resources
+C:\Users\Jon\source\repos\WorkTimeTracker\WorkTimeTracker\bin\Debug\App.config
+C:\Users\Jon\source\repos\WorkTimeTracker\WorkTimeTracker\bin\Debug\WorkTimeTracker.exe.manifest
+C:\Users\Jon\source\repos\WorkTimeTracker\WorkTimeTracker\bin\Debug\WorkTimeTracker.application
+C:\Users\Jon\source\repos\WorkTimeTracker\WorkTimeTracker\obj\Debug\WorkTimeTracker.exe.manifest
+C:\Users\Jon\source\repos\WorkTimeTracker\WorkTimeTracker\obj\Debug\WorkTimeTracker.application

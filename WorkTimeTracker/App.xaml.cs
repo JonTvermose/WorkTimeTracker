@@ -51,12 +51,22 @@ namespace WorkTimeTracker
             _notifyIcon = null;
         }
 
-        public void OnShutdown(object sender, EventArgs e)
+        protected override void OnSessionEnding(SessionEndingCancelEventArgs e)
         {
-            // Register the shutdown time
+            // Always call method in base class, so that the event gets raised.
+            base.OnSessionEnding(e);
+
+            // Place your own SessionEnding logic here
+            OnShutdown(this, null);
+        }
+
+        public void OnShutdown(object sender, SessionEndingEventArgs e)
+        {            
+            // Register the shutdown time            
             using (var context = new ApplicationDbContext())
             {
-                var today = context.Days.SingleOrDefault(x => x.DateTicks == DateTime.UtcNow.Date.Ticks);
+                var todayTicks = DateTime.UtcNow.Date.Ticks;
+                var today = context.Days.SingleOrDefault(x => x.DateTicks == todayTicks);
                 if(today != null)
                 {
                     today.EndTime = DateTime.UtcNow.TimeOfDay;
@@ -78,7 +88,6 @@ namespace WorkTimeTracker
         {
             using (var context = new ApplicationDbContext())
             {
-                // TODO Fetch data/calculate and update the data shown by mainwindow
                 var todayTicks = DateTime.UtcNow.Date.Ticks;
                 var today = context.Days.SingleOrDefault(x => x.DateTicks == todayTicks);
                 if (today == null)

@@ -11,7 +11,11 @@ namespace WorkTimeTracker.Helpers
     {
         public static TimeSpan WorkTime(this Day day)
         {
-            return new TimeSpan(day.EndTime.Value.Ticks - day.StartTime.Value.Ticks);
+            if(day.EndTime.HasValue && day.StartTime.HasValue)
+            {
+                return new TimeSpan(day.EndTime.Value.Ticks - day.StartTime.Value.Ticks);
+            }
+            return TimeSpan.FromTicks(0);
         }
     }
 }

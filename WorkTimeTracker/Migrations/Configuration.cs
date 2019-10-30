@@ -9,7 +9,8 @@ namespace WorkTimeTracker.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationDataLossAllowed = true;
         }
 
         protected override void Seed(WorkTimeTracker.ApplicationDbContext context)

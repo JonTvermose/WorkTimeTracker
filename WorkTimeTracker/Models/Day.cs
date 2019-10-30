@@ -12,5 +12,6 @@ namespace WorkTimeTracker.Models
         public long DateTicks { get; set; }
         public TimeSpan? StartTime { get; set; }
         public TimeSpan? EndTime { get; set; }
+        public bool Holiday { get; set; }
     }
 }

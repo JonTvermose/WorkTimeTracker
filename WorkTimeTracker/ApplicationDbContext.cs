@@ -13,6 +13,7 @@ namespace WorkTimeTracker
     {
         public ApplicationDbContext() : base(ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString)
         {
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<ApplicationDbContext, Migrations.Configuration>());
         }
 
         public DbSet<Day> Days { get; set; }

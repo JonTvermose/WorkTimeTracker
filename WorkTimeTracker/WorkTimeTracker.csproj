@@ -94,6 +94,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="ApplicationDbContext.cs" />
+    <Compile Include="DayListWindow.xaml.cs">
+      <DependentUpon>DayListWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\DateTimeExtensions.cs" />
     <Compile Include="Helpers\DayExtensions.cs" />
     <Compile Include="Helpers\TimeSpanExtensions.cs" />
     <Compile Include="Migrations\201910161844403_Initial.cs" />
@@ -104,6 +108,10 @@
     <Compile Include="Migrations\201910170717495_ChangedDayDate.Designer.cs">
       <DependentUpon>201910170717495_ChangedDayDate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201910302046557_AddedHolidays.cs" />
+    <Compile Include="Migrations\201910302046557_AddedHolidays.Designer.cs">
+      <DependentUpon>201910302046557_AddedHolidays.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Day.cs" />
     <Compile Include="Resources.Designer.cs">
@@ -111,6 +119,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\DayViewModel.cs" />
+    <Page Include="DayListWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -143,6 +156,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201910170717495_ChangedDayDate.resx">
       <DependentUpon>201910170717495_ChangedDayDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910302046557_AddedHolidays.resx">
+      <DependentUpon>201910302046557_AddedHolidays.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

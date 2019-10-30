@@ -28,6 +28,8 @@ namespace WorkTimeTracker
         private string _ThisWeekTotalTime;
         private string _TodayTime;
         private string _ThisWeekRemainingTime;
+        private string _Week;
+
 
         public string ThisWeekTotalTime { 
             get => _ThisWeekTotalTime;
@@ -58,6 +60,16 @@ namespace WorkTimeTracker
             }
         }
 
+        public string Week
+        {
+            get => _Week;
+            set
+            {
+                _Week = value;
+                OnPropertyChanged();
+            }
+        }
+
         public MainWindow()
         {
             InitializeComponent();
@@ -66,10 +78,18 @@ namespace WorkTimeTracker
 
         public void UpdateData(TimeSpan weekTime, Day today)
         {
-            ThisWeekTotalTime = weekTime.ToPrettyTime();
             var todayWorkTime = new TimeSpan(DateTime.UtcNow.TimeOfDay.Ticks - today.StartTime.Value.Ticks);
+            ThisWeekTotalTime = (weekTime + todayWorkTime).ToPrettyTime();
             ThisWeekRemainingTime = new TimeSpan(TimeSpan.FromHours(37).Ticks - weekTime.Ticks - todayWorkTime.Ticks).ToPrettyTime();
             TodayTime = todayWorkTime.ToPrettyTime();
+            Week = new DateTime(today.DateTicks).GetIso8601WeekOfYear().ToString();
+        }
+
+        private void ShowDays_Click(object sender, RoutedEventArgs e)
+        {
+            var daysList = new DayListWindow();
+            daysList.Show();
+            this.Close();
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

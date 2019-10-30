@@ -24,7 +24,7 @@ namespace WorkTimeTracker
             base.OnStartup(e);
             MainWindow = new MainWindow();
             MainWindow.Closing += MainWindow_Closing;
-
+            
             _notifyIcon = new System.Windows.Forms.NotifyIcon();
             _notifyIcon.DoubleClick += (s, args) => ShowMainWindow();
             _notifyIcon.Icon = WorkTimeTracker.Resources.IconTray;
@@ -108,7 +108,6 @@ namespace WorkTimeTracker
                 {
                     weekTime += day.WorkTime();
                 }
-
                 ((MainWindow)MainWindow).UpdateData(weekTime, today);
             }
         }
@@ -118,6 +117,7 @@ namespace WorkTimeTracker
             UpdateData();
 
             if (MainWindow.IsVisible)
+
             {
                 if (MainWindow.WindowState == WindowState.Minimized)
                 {

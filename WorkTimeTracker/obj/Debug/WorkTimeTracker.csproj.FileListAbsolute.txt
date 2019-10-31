@@ -28,3 +28,5 @@ C:\Users\Jon\source\repos\WorkTimeTracker\WorkTimeTracker\obj\Debug\WorkTimeTrac
 C:\Users\Jon\source\repos\WorkTimeTracker\WorkTimeTracker\obj\Debug\DayListWindow.g.cs
 C:\Users\Jon\source\repos\WorkTimeTracker\WorkTimeTracker\obj\Debug\DayListWindow.baml
 C:\Users\Jon\source\repos\WorkTimeTracker\WorkTimeTracker\obj\Debug\WorkTimeTracker.Migrations.AddedHolidays.resources
+C:\Users\Jon\source\repos\WorkTimeTracker\WorkTimeTracker\obj\Debug\TimeControl.g.cs
+C:\Users\Jon\source\repos\WorkTimeTracker\WorkTimeTracker\obj\Debug\TimeControl.baml

@@ -11,6 +11,10 @@ namespace WorkTimeTracker.Helpers
     {
         public static TimeSpan WorkTime(this Day day)
         {
+            if (day.Holiday)
+            {
+                return new TimeSpan(hours: 7, minutes: 24, seconds: 0);
+            }
             if(day.EndTime.HasValue && day.StartTime.HasValue)
             {
                 return new TimeSpan(day.EndTime.Value.Ticks - day.StartTime.Value.Ticks);

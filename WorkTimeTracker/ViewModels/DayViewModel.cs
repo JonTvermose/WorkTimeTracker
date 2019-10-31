@@ -3,42 +3,40 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WorkTimeTracker.Models;
 
 namespace WorkTimeTracker.ViewModels
 {
     public class DayViewModel
     {
-        private DateTime _Date;
+        public int Id { get; set; }
+
         public DateTime Date
         {
-            get => _Date;
-            set
-            {
-                _Date = TimeZoneInfo.ConvertTimeFromUtc(value, TimeZoneInfo.Local);
-            }
-        }
-        private TimeSpan _StartTime;
-        public TimeSpan? StartTime { 
-            get => _StartTime; 
-            set 
-            {
-                if(value.HasValue)
-                    _StartTime = new DateTime(Date.Ticks, DateTimeKind.Local).Add(value.Value).TimeOfDay;
-            }
+            get; set;
         }
 
-        private TimeSpan _EndTime;
+        public TimeSpan? StartTime {
+            get; set;
+        }
+
         public TimeSpan? EndTime
         {
-            get => _EndTime;
-            set
-            {
-                if(value.HasValue)
-                    _EndTime = new DateTime(Date.Ticks, DateTimeKind.Local).Add(value.Value).TimeOfDay;
-            }
+            get; set;
         }
 
         public bool Holiday { get; set; }
+
+        public DayViewModel(){}
+
+        public DayViewModel(Day day)
+        {
+            Id = day.Id;
+            Date = TimeZoneInfo.ConvertTimeFromUtc(new DateTime(day.DateTicks), TimeZoneInfo.Local);
+            StartTime = day.StartTime.HasValue ? TimeZoneInfo.ConvertTimeFromUtc(new DateTime(day.StartTime.Value.Ticks), TimeZoneInfo.Local).TimeOfDay : TimeSpan.FromSeconds(0);
+            EndTime = day.EndTime.HasValue ? TimeZoneInfo.ConvertTimeFromUtc(new DateTime(day.EndTime.Value.Ticks), TimeZoneInfo.Local).TimeOfDay : TimeSpan.FromSeconds(0);
+            Holiday = day.Holiday;
+        }
 
     }
 }

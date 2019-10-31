@@ -102,7 +102,8 @@ namespace WorkTimeTracker
                 }
                 var dayOfWeek = new DateTime(today.DateTicks).DayOfWeek; // mon = 1
                 var monday = DateTime.UtcNow.Date.AddDays(1 - (int)dayOfWeek);
-                var thisWeekDays = context.Days.Where(x => x.DateTicks >= monday.Ticks && x.DateTicks < today.DateTicks).ToList();
+                var sunday = monday.AddDays(6);
+                var thisWeekDays = context.Days.Where(x => x.DateTicks >= monday.Ticks && x.DateTicks <= sunday.Ticks).ToList();
                 TimeSpan weekTime = TimeSpan.FromSeconds(0);
                 foreach(var day in thisWeekDays)
                 {

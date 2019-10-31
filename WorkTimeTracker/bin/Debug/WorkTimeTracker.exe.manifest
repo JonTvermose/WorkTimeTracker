@@ -66,14 +66,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="WorkTimeTracker.exe" size="265688">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="WorkTimeTracker.exe" size="276440">
       <assemblyIdentity name="WorkTimeTracker" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>N87D6Xk4kB0cYe4wLJPVDpgeicpFnrdCGKtLHvgmrWg=</dsig:DigestValue>
+        <dsig:DigestValue>+xNAvdJXEt9he51bE738M6C7mwDEbmNgUFG67pIjZ+k=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

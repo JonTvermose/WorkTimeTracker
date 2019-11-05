@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -40,6 +41,11 @@ namespace WorkTimeTracker
         {
             InitializeComponent();
             DataContext = this;
+        }
+
+        protected override void OnInitialized(EventArgs e)
+        {
+            base.OnInitialized(e);
             using (var dbContext = new ApplicationDbContext())
             {
                 var days = dbContext.Days.OrderByDescending(x => x.DateTicks).ToList().Select(x => new DayViewModel(x)).ToList();

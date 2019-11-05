@@ -99,6 +99,10 @@ namespace WorkTimeTracker
                     };
                     context.Days.Add(today);
                     context.SaveChanges();
+                } else if (today.StartTime == null)
+                {
+                    today.StartTime = DateTime.UtcNow.TimeOfDay;
+                    context.SaveChanges();
                 }
                 var dayOfWeek = new DateTime(today.DateTicks).DayOfWeek; // mon = 1
                 var monday = DateTime.UtcNow.Date.AddDays(1 - (int)dayOfWeek);

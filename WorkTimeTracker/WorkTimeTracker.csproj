@@ -123,6 +123,10 @@
       <DependentUpon>TimeControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\DayViewModel.cs" />
+    <Compile Include="ViewModels\WeekViewModel.cs" />
+    <Compile Include="WeekListWindow.xaml.cs">
+      <DependentUpon>WeekListWindow.xaml</DependentUpon>
+    </Compile>
     <Page Include="DayListWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -140,6 +144,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="TimeControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WeekListWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

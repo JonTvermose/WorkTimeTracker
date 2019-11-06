@@ -92,6 +92,13 @@ namespace WorkTimeTracker
             this.Close();
         }
 
+        private void ShowWeeks_Click(object sender, RoutedEventArgs e)
+        {
+            var weekList = new WeekListWindow();
+            weekList.Show();
+            this.Close();
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected void OnPropertyChanged([CallerMemberName]string propertyName = null)

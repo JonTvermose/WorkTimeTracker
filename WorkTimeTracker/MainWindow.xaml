@@ -19,7 +19,9 @@
 
         <Label Content="Week remaining:" HorizontalAlignment="Left" Margin="30,180,0,0" VerticalAlignment="Top" Foreground="#222f3e" FontSize="14"/>
         <Label Content="{Binding Path=ThisWeekRemainingTime}" HorizontalAlignment="Left" Margin="150,170,0,0" VerticalAlignment="Top" FontSize="24" Foreground="#10ac84" FontWeight="Bold"/>
-        
-        <Button Margin="00, 230,0,0" Background="#c8d6e5" Foreground="#222f3e" FontSize="16" Click="ShowDays_Click">Show days</Button>
+
+        <Button Margin="0, 230,0,0" HorizontalAlignment="Left" Width="146" Background="#c8d6e5" Foreground="#222f3e" FontSize="16" Click="ShowDays_Click">Show days</Button>
+        <Button Margin="0, 230,0,0" HorizontalAlignment="Right" Width="146" Background="#c8d6e5" Foreground="#222f3e" FontSize="16" Click="ShowWeeks_Click">Show weeks</Button>
+
     </Grid>
 </Window>

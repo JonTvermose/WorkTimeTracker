@@ -23,14 +23,28 @@
                     <GridViewColumn Header="Hours" Width="100">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Margin="15,0,0,0" HorizontalAlignment="Center" FontSize="16" Width="60" Text="{Binding Path=Total, StringFormat=\{0:h\\:mm\}}"/>
+                                <TextBlock Margin="15,0,0,0" HorizontalAlignment="Center" FontSize="16" Width="60">
+                                    <TextBlock.Text>
+                                        <MultiBinding StringFormat="{}{0:F0}:{1:mm}">
+                                            <Binding Path="Total.TotalHours"/>
+                                            <Binding Path="Total"/>
+                                        </MultiBinding>
+                                    </TextBlock.Text>
+                                </TextBlock>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
                     <GridViewColumn Header="Delta" Width="100" >
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Margin="15,0,0,0" HorizontalAlignment="Center" FontSize="16" Width="60" Text="{Binding Path=Delta, StringFormat=\{0:h\\:mm\}}"/>
+                                <TextBlock Margin="15,0,0,0" HorizontalAlignment="Center" FontSize="16" Width="60">
+                                    <TextBlock.Text>
+                                        <MultiBinding StringFormat="{}{0:F0}:{1:mm}">
+                                            <Binding Path="Delta.TotalHours"/>
+                                            <Binding Path="Delta"/>
+                                        </MultiBinding>
+                                    </TextBlock.Text>
+                                </TextBlock>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
@@ -39,8 +53,8 @@
                             <DataTemplate>
                                 <TextBlock Margin="15,0,0,0" HorizontalAlignment="Center" FontSize="16" Width="60">
                                     <TextBlock.Text>
-                                        <MultiBinding StringFormat="{}{0:D2}:{1:mm}">
-                                            <Binding Path="TotalDelta.Hours"/>
+                                        <MultiBinding StringFormat="{}{0:F0}:{1:mm}">
+                                            <Binding Path="TotalDelta.TotalHours"/>
                                             <Binding Path="TotalDelta"/>
                                         </MultiBinding>
                                     </TextBlock.Text>

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WorkTimeTracker"
         mc:Ignorable="d"
-        Title="Days" Height="450" Width="500">
+        Title="Days" Height="450" Width="580">
     <Grid>
         <Button Margin="10" Background="#c8d6e5" Foreground="#222f3e" FontSize="16" Click="CreateDay_Click" Height="40" Width="230" HorizontalAlignment="Left" VerticalAlignment="Top">Create new day</Button>
         <Button x:Name="SaveButton" Margin="10" Background="#c8d6e5" Foreground="#222f3e" FontSize="16" Click="SaveChanges_Click" Height="40" Width="230" HorizontalAlignment="Right" VerticalAlignment="Top">Save changes</Button>
@@ -40,6 +40,13 @@
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <CheckBox Margin="20,0,-4,0" HorizontalAlignment="Center" IsChecked="{Binding Holiday}" Unchecked="CheckboxUnchecked" Checked="CheckboxChecked" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Day Total" Width="120" >
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Margin="15,0,0,0" HorizontalAlignment="Center" Height="24" FontSize="16" Width="80" Text="{Binding Path=TotalTime}"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>

@@ -4,8 +4,12 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WorkTimeTracker"
+        xmlns:converter="clr-namespace:WorkTimeTracker.Converters"
         mc:Ignorable="d"
         Title="Weeks" Height="450" Width="450">
+    <Window.Resources>
+        <local:TimespanColorConverter x:Key="TimespanColorConverter"></local:TimespanColorConverter>
+    </Window.Resources>
     <Grid>
         <ListView Margin="0, 0, 0, 0" ItemsSource="{Binding WeekList}"
             VerticalContentAlignment="Top"  
@@ -51,13 +55,16 @@
                     <GridViewColumn Header="Total delta" Width="100" >
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Margin="15,0,0,0" HorizontalAlignment="Center" FontSize="16" Width="60">
+                                <TextBlock Margin="15,0,0,0" HorizontalAlignment="Center" FontSize="16" Width="60" >
+                                    <TextBlock.Foreground>
+                                        <Binding Path="TotalDelta.Totalhours" Converter="{StaticResource TimespanColorConverter}"/>
+                                    </TextBlock.Foreground>
                                     <TextBlock.Text>
                                         <MultiBinding StringFormat="{}{0:F0}:{1:mm}">
                                             <Binding Path="TotalDelta.TotalHours"/>
-                                            <Binding Path="TotalDelta"/>
-                                        </MultiBinding>
-                                    </TextBlock.Text>
+                                            <Binding Path="TotalDelta"/>                                            
+                                        </MultiBinding>                                        
+                                    </TextBlock.Text>                                    
                                 </TextBlock>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>

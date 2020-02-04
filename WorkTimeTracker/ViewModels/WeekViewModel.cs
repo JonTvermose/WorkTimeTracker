@@ -21,7 +21,7 @@ namespace WorkTimeTracker.ViewModels
             Week = week;
             WeekYear = week.ToString() + "-" + year.ToString();
             Total = total;
-            Delta = Total.Subtract(TimeSpan.FromHours(37));
+            Delta = TimeSpan.FromHours(-37).Add(Total);
         }
 
     }

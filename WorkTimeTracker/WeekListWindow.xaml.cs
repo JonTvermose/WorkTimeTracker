@@ -59,7 +59,7 @@ namespace WorkTimeTracker
                 var accumulatedDelta = TimeSpan.FromMinutes(0);
                 foreach (var week in weeks)
                 {
-                    week.TotalDelta = week.Delta.Add(accumulatedDelta);
+                    week.TotalDelta = accumulatedDelta.Add(week.Delta);
                     accumulatedDelta = week.TotalDelta;
                 }
                     
